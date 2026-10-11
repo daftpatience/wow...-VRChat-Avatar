@@ -322,4 +322,11 @@ open the control panel in the SDK. you should have already logged in earlier. go
 as long as the warning panel is only yellows, no red, then you're good to upload your avatar!
 
 
-thanks for reading all this!! i hope it isn't too difficult. feel free to message me if you need help at any point in the process!
+thanks for reading all this!! i hope it isn't too difficult. guildies feel free to message me if you need help at any point in the process!
+
+---- SOMEDAY WE'LL FIGURE OUT -----
+--------------------------------------------------------------------
+
+- held items
+- cooler effects like smoke and flames and stuff
+- maybe somehow exporting and applying animations like idling
