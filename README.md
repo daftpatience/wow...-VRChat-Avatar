@@ -1,2 +1,327 @@
-# wow...-VRChat-Avatar
-notes on warcraft avi exporting for vrchat
+----------------------------------------------------------
+FORMATTING A CLASSIC WOW AVATAR FOR VRCHAT
+----------------------------------------------------------
+struggled through by daftpatience
+
+for the blackwing guard!
+
+----------------------------------------------------------
+things to get:
+
+- warcraft model viewer [https://wowmodelviewer.net/download/]
+
+- Blender 5.1 or 5.2 [https://download.blender.org/release/]
+- CATS blender plugin 5.2.1.0 [https://git.neoneko.org/NeoNeko/Cats-Blender-Plugin#install]
+
+- VRChat Creator Companion [https://creators.vrchat.com/sdk/]
+- Unity (follow steps during VCC install for this)
+
+-------------------------
+-------🧙‍♂️ WMV PHASE 💾-------
+-------------------------
+
+- make your character in WMV! i didnt do this myself so i cant say anything helpful. ask vi/murog/etc
+[https://blenderartists.org/t/quick-tutorial-how-to-export-world-of-warcraft-assets-to-render-with-cycles/531730]
+
+- export your avatar as an obj file.
+- if you want to have multiple toggleable outfits, then first export only your avatar in underwear or no clothes at all as the base body (otherwise you'll be missing parts, like legs under skirts. that's fine if you don't want them to clip but it's more work to put them back later.)
+- you can do multiple hairstyles but they're tied to the outfit that goes with them.
+- export every variant you want. sort out and rename the textures for each part so that organizing those materials in unity isnt a nightmare later.
+
+specific fun one that i recommend: make a variant of your avatar that is dressed kinda ghostly. (later i will go over making a dead avatar but we need a custom outfit slot for it. i couldn't figure out how to overlay one shader onto another and this is 2nd best.)
+
+all base body textures should be named something like: 
+
+	base_body.tga 
+	base_hair.tga
+	etc.
+
+and all clothing textures should be named grouped something like: 
+
+	party_body.tga
+	party_shoulder.tga
+	party_helm.tga
+	party_cape.tga
+	
+	dead_body.tga
+	dead_shoulder.tga
+	dead_helm.tga
+	
+	fishing_body.tga
+	fishing_shoulder.tga
+	fishing_helm.tga
+
+etc. etc. etc. whatever you call your outfits as long as theyre nicely grouped youre good.
+
+-------------------------
+-----🧡 BLENDER PHASE 😇-----
+-------------------------
+
+-don't forget to get CATS blender plugin! [https://git.neoneko.org/NeoNeko/Cats-Blender-Plugin#install]
+it will help immensely with the armature and weight painting later.
+
+----- AVATAR PREP -----
+--------------------------------------------------------------------
+
+- in a new blender file, drag in the body obj &  hit import. some textures may be missing, this is ok
+- name the object in the collection to something suitable (BASE or BODY or something. then when you do outfits later name those after the outfit etc etc. if you dont name these clearly now you will hate doing unity stuff later)
+- go to edit mode (select object and hit tab)
+- hit A (select all) > merge by distance (this cleans up a lot of messy verts)
+- toggle face orientation on in the overlays tab. the OUTSIDE of the model should be blue. if any are not, go to mesh > normals > recalculate outside, select & flip any that it messes up.
+- go to material properties > surface > base colour and set it to image texture by clicking the little dot (and select the right .tga) rename these materials for clarity (renaming everything might feel like overkill but UNITY HATES YOU AND YOUR FAMILY so making anything easier now is gonna save you later)
+- object data properties > geometry data > clear custom normals data (this is VITAL for aesthetic reasons)
+for any textures with transparency (usually hair): 
+- switch to shading tab
+- find hair texture node
+- attach alpha from that to the principled BSDF(or whatever shader you are using) node's alpha
+- if you only want one hairstyle and exported that on the base, skip ahead to separating the hair from the head* before coming back to do the armature.
+
+
+
+----- BASE BODY ARMATURE & WEIGHTS -----
+--------------------------------------------------------------------
+
+any vrchat avatar tutorial about adding armatures should work here. 
+(there's a good chance you won't need eye bones since warcraft avis just use textures)
+tutorials should be vrchat avatar specific, as unity/vrchat requires certain bones with certain names. you can also try using auto rigging tools like rigify (riggify?) but make sure to compare to 
+
+the tutorial i've used is rainhet chaneru's:
+	armature: [https://www.youtube.com/watch?v=2QkgqsRyRMo]
+	weight painting: [https://www.youtube.com/watch?v=_PB-H7t0kHI]
+she has a whole guide series about making avatars from scratch that is one of the more thorough ones out there.
+
+
+
+----- PREPPING OUTFITS AND HAIR-----
+--------------------------------------------------------------------
+
+- go back to object mode. hide your base avatar for now & repeat all AVATAR PREP steps for dressed avatars you exported earlier. it may be easier to do one of these at a time, so proceed to:
+
+
+---*separating the hair from the head:---
+--------------------------------------------------------------------
+
+- in edit mode go to material properties, click on hair texture & click the select button
+  (this will select all faces that use the texture)
+- if you only want one hairstyle on the base body: hit Y (split) to split the hair from the head without separating it. 
+  (this will be useful for blendshapes to hide it under hats etc.)
+- if you have multiple hairstyles don't split it. just select the material and proceed:
+
+
+
+---isolating clothing/accessories:---
+--------------------------------------------------------------------
+
+-select all accessory textures using the same method as selecting the hair
+  (shoulderpads, capes, helms, etc.)
+- carefully select all faces that aren't the same as the base body. everything but the base body should be selected
+  (tabbards, skirts, wide sleeves, etc. you can toggle visibility of the base body to compare)
+- hit ctrl+I to invert selection
+- hit del > faces to delete all the redundant body parts. some of the outfit will go away, this is okay! we are going to make a toggle later to change the texture of the base body to match each outfit. that way there's no clipping outfit layers against *most* of the body, at least.
+- for now if you want to view the base body with the right textures in blender, select the base body & go to the material properties tab:
+  - hit the + to add a new material
+  - hit the browse button (little checkered ball with a dropdown) & link the existing outfit material
+  - click on the base body material & hit the [select] button
+  - click on the outfit material & hit assign
+(i'm often flipping between outfits and doing this to check stuff as i go)
+
+
+
+---parenting outfit objects to the base armature---
+--------------------------------------------------------------------
+
+- modifier properties > add modifier > deform > armature
+- select your armature in the modifier's object window there
+- in scene collection, drag outfit object over the armature, hold shift & drop to parent it to the armature. now the outfit is ready to weight paint.
+
+
+
+----- VISEMES, SHAPEKEYS/BLENDSHAPES -----
+--------------------------------------------------------------------
+
+visemes are the mouth shapes that vrchat uses to make your avi talk. these are made with blendshapes/shapekeys, and they deform the mesh in little saved poses without ruining the base model. you can also use shapekeys to make other parts of the mesh move, which you can later turn into a toggle or a part of a toggle in unity. things like hiding the hair inside a helmet or facial expressions.
+
+- viseme/shapekey tutorial: [https://www.youtube.com/watch?v=8hCXeUSisFU&t=1489s] 
+(she doesn't go over every viseme, but the setup info is good. HIGHLY recommend just grabbing a mirror and referencing your own face! and it's WoW. go big and silly. you know what they move like.)(also, it starts with a blinking pose, but WoW characters just have a funny little eyelid texture that blips in, so feel free to ignore/delete that if you don't wanna bother with it.)
+- list of vrchat required visemes: [https://wiki.vrchat.com/wiki/Visemes] note that unity prefers i, o, and u, to be named ih, oh, and ou, or you'll have to manually assign those later.
+
+technically visemes aren't necessary and you can upload an avatar just fine without making any blendshapes, they just won't move their mouth. it's up to you!
+
+
+
+----- EXPORTING AVATAR -----
+--------------------------------------------------------------------
+
+MAKE SURE youre COMPLETELY HAPPY with all this before moving on! Unity is not as friendly as blender about making alterations. 
+
+- ensure all outfit layers are visible.
+- ensure body texture is assigned to your nude/underwear base.
+- file > export > FBX
+- ENSURE the applied scaling is FBX ALL and not whatever it's defaulted to. if you dont do this unity will pretend everything is cool right until youre almost done and then it will throw your whole project in the garbage
+
+name that fbx file something very clear so it's easy to find.
+
+
+
+-------------------------
+------🔪 UNITY PHASE 👿------
+-------------------------
+
+welcome to hell... i'm much less confident in unity. i'll list everything i did... hopefully it all works.
+there are a lot of tutorials out there. many are presuming the avatar is already fully setup...  good luck 😭
+
+
+----- VCC SETUP -----
+--------------------------------------------------------------------
+
+once you have the Vrchat Creator Companion, follow all the settings in there and it should walk you through getting a compatible version of unity installed as well. make sure you have all these packages/prefabs installed with VCC:
+
+	- vrcfury (for making toggles)
+	- poiyomi toon (optionally, for shaders)
+	- gesturemanager (for testing menus)
+
+everytime you start an avatar project it'll show you packages you can toggle on - make sure these ones are checked.
+
+
+---- AVATAR IMPORT/SETUP -----
+--------------------------------------------------------------------
+
+- start a 2022 avatar project and add all the prefabs you need.
+- drag your FBX into the project panel assets folder.
+- drag the imported FBX into the hierarchy panel.
+- back in the project panel assets folder, select the FBX.
+- now we look at the inspector panel.
+- in the model tab, check Legacy Blend Shape Normals on and apply.
+- in the rig tab, change animation type to Humanoid and apply.
+- in the materials tab, change location to Use External Materials and apply. this will make a materials folder in the assets tab.
+- in the materials folder, right click > create > folder. name it Textures
+
+- drag ALL your textures into that folder. we will apply them where they belong later.
+
+
+---- CONFIGURING RIG -----
+--------------------------------------------------------------------
+
+- select avatar FBX in project panel assets folder and look at the inspector.
+- in the rig tab, hit Configure... (it may prompt you to save.)
+- inspect all the bones for any mismatched connections. If you named everything carefully, it should all be good but errors can happen. eg. i had to assign the chest. make sure to hit apply and then done to get out of there.
+- it's okay if your avatar doesn't have the same amt or kinds of bones as unity shows available to assign. many wow models do not have all 5 fingers, and rigify will give you unnecessary ones - they don't need to be assigned. check VRC creator companion for the absolutely necessary ones [https://creators.vrchat.com/avatars/rig-requirements/]
+
+
+---- PREPPING MATERIALS -----
+--------------------------------------------------------------------
+(i'm using poiyomi toon shaders for this - other shaders will work but the settings are different and idk them.)
+make sure you are logged in to the VRChat SDK with the builder window visible - there's a warning about textures that has an auto fix button. hit that before editing any textures here or it's gonna make you redo all this hard work later.
+
+- in the project view's materials folder there should be many gray orbs with familiar names. pick one and look at the inspector.
+  - unlock shader if it is locked.
+  - change shader from standard to .poiyomi > poiyomi toon. open the dropdown.
+    - Color & Normals > Texture has a blank box. from the project window's textures folder, drag the correct texture on to that.
+    - Rendering > Culling and Depth > set Cull to Off so backfaces are visible.
+    - at the bottom of the shader options, find VRChat Fallback Shader. change it to standard > opaque > doublesided.
+    - if the texture requires transparency, find the Alpha Options dropdown menu in Color & Normals and uncheck force opaque.
+  - lock in shader.
+
+repeat these steps for every material except your dead/ghost one, if you made one of those.
+
+for now the main body won't be connected to all the outfit materials, we will add toggles for that soon.
+
+---- GHOSTLY AVATAR MATERIAL FOR WHEN YOURE DEAD -----
+--------------------------------------------------------------------
+  
+  I made a slightly more complicated shader for the dead outfit. it's not very good and doesn't do a lot of what i want so i encourage everyone to mess around... help me... 
+	
+  here's a really quick rundown of are all the toggles i did. since vi only had one hairstyle i also had to make a new material for the dead version of the hair. 
+  
+- poiyomi toon
+- top right setting change from opaque to transparent
+- Color & normals > Color and alpha [RGBA 105 112 128 150]
+- alpha options > uncheck force opaque
+- Special FX > emissions > check & open emission 1 (0 doesnt do anything) 
+	- if material has transparency like hair, add emission mask texture 
+		(make a copy of the hair & turn hair white and background black in whatever art program)
+	- Emission Color [RGBA 134 178 183 255]
+	- Emission strength 5
+	- check use base colours ON
+- rendering > cull off, ZClip on
+- fallback: standard > transparent > doublesided
+
+right click on the shader and copy material properties. paste this onto all your dead materials (you'll have to replace the textures each time! 
+it took a little fiddling to get the hair to behave. I found copying the material properties of the normal hair and pasting it on the ghost hair and then changing it back to transparent worked.)
+  
+
+---- AVATAR DESCRIPTOR -----
+--------------------------------------------------------------------
+
+this is the absolute base important thing you need for your avatar to work in vrchat.
+
+- select your FBX in the hierarchy and look at inspector.
+- click Add Component and search for VRC Avatar Descriptor.
+  - view > edit view position. you'll see a little floating sphere with a gimbal to move around in the scene. align this vertically with the eyeline of your avatar, and align the depth with approximately the eyesockets. keep it centered.
+  - Lipsync > Auto Detect. check that all your visemes got copied correctly and assign any missing ones.
+  - if you kept the eyelid texture and made eye bones, you can futz with the Eye Look settings here. 
+
+TECHNICALLY you can call this done & upload it! it's playable now but it'll be wearing every outfit at once. let's keep adding stuff >:D
+  
+  
+
+---- OUTFIT SWAP TOGGLES -----
+--------------------------------------------------------------------
+
+- select avatar in hierarchy (you should see a blue selection outline) and look at the inspector.
+- hit Add Component and search Toggle (VRCFury)
+- in menu path field, type outfits/[outfitname1]
+- Add Action > Object Toggle (we are showing/hiding outfit parts)
+  -Turn On: drag in the outfit from the hierarchy (this is your shoulderpads/helmet/skirt/tabbard/cape/whatever. now that it is set to ON that means its OFF everywhere else but here.)
+- Add Action (this is now a tiny plus rather than a big button) > Material Swap (we are changing the texture on the body)
+  - set Renderer to your base body object. (you can drag it in from the hierarchy)
+  - set slot to the base body texture slot (nude/underwear/whatever you called it)
+  - set material to the outfit material you want to change it to. (you can drag it in from the materials folder in the project view)
+- IF you made any blendshapes to go with this outfit (like hat hair) Add Action > Blendshape and select the correct blendshape.
+- options > saved between worlds
+- options > Enable Exclusive Tags (this will make it so toggling an outfit on automatically turns the others off)
+  - in Exclusive tag field, type "outfit" or something
+
+
+now we repeat all that for the remaining outfits:
+- right click on your prev toggle, hit Copy Component.
+- right click in the same space > Paste Component As New
+- change menu path name (outfits/[outfitname2])
+- change object toggle to new outfit
+- change material swap's material to new outfit material (leave renderer and slot as is)
+
+if you want your underwear as an outfit: 
+- paste another of the same VRCFury toggle
+- change menu path name (outfits/[outfitnamewhatever])
+- delete any actions. the rest of the outfits turn on the clothing so now they are automatically OFF for this one, and the material is already correct.
+- options > This Is Exclusive Off State
+
+if you don't want the underwear as an outfit, choose one of the other outfit toggles and set that one to Default On AND the Exclusive Off State.
+
+you can test all these toggles by adding gesture manager. it's in the tools section at the top.
+
+
+---- OPTIONAL PREFABS -----
+--------------------------------------------------------------------
+
+these come with instructions, just do what they tell ya!
+
+- gogoloco [https://gogoloco.net/] lets you do a lot of nice sitting/lying poses in and out of VR and also adjusting your position in space.
+(it's honestly a little easier to download it from gumroad than to install it with VCC)
+- syncdance [https://kiny.booth.pm/items/4881102]
+- there are a lot more out there!! gogoloco is the one essential imo.
+
+
+
+---- UPLOADING AVATAR -----
+--------------------------------------------------------------------
+
+open the control panel in the SDK. you should have already logged in earlier. go to the builder tab and make sure the right avatar is selected. name it! write a desc! capture a pic from the scene!
+
+as long as the warning panel is only yellows, no red, then you're good to upload your avatar!
+
+
+thanks for reading all this!! i hope it isn't too difficult. feel free to message me if you need help at any point in the process!
+
+
+
