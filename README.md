@@ -20,7 +20,7 @@ things to get:
 -------🧙‍♂️ WMV PHASE 💾-------
 -------------------------
 
-- make your character in WMV! i didnt do this myself so i cant say anything helpful. ask vi/murog/etc
+- make your character in WMV! i didnt do this myself so i cant say anything helpful. lalala
 [https://blenderartists.org/t/quick-tutorial-how-to-export-world-of-warcraft-assets-to-render-with-cycles/531730]
 
 - export your avatar as an obj file.
@@ -30,23 +30,23 @@ things to get:
 
 specific fun one that i recommend: make a variant of your avatar that is dressed kinda ghostly. (later i will go over making a dead avatar but we need a custom outfit slot for it. i couldn't figure out how to overlay one shader onto another and this is 2nd best.)
 
-all base body textures should be named something like: 
+all base body textures should be named something like:
 
-	base_body.tga 
+	base_body.tga
 	base_hair.tga
 	etc.
 
-and all clothing textures should be named grouped something like: 
+and all clothing textures should be named grouped something like:
 
 	party_body.tga
 	party_shoulder.tga
 	party_helm.tga
 	party_cape.tga
-	
+
 	dead_body.tga
 	dead_shoulder.tga
 	dead_helm.tga
-	
+
 	fishing_body.tga
 	fishing_shoulder.tga
 	fishing_helm.tga
@@ -70,7 +70,7 @@ it will help immensely with the armature and weight painting later.
 - toggle face orientation on in the overlays tab. the OUTSIDE of the model should be blue. if any are not, go to mesh > normals > recalculate outside, select & flip any that it messes up.
 - go to material properties > surface > base colour and set it to image texture by clicking the little dot (and select the right .tga) rename these materials for clarity (renaming everything might feel like overkill but UNITY HATES YOU AND YOUR FAMILY so making anything easier now is gonna save you later)
 - object data properties > geometry data > clear custom normals data (this is VITAL for aesthetic reasons)
-for any textures with transparency (usually hair): 
+for any textures with transparency (usually hair):
 - switch to shading tab
 - find hair texture node
 - attach alpha from that to the principled BSDF(or whatever shader you are using) node's alpha
@@ -81,9 +81,9 @@ for any textures with transparency (usually hair):
 ----- BASE BODY ARMATURE & WEIGHTS -----
 --------------------------------------------------------------------
 
-any vrchat avatar tutorial about adding armatures should work here. 
+any vrchat avatar tutorial about adding armatures should work here.
 (there's a good chance you won't need eye bones since warcraft avis just use textures)
-tutorials should be vrchat avatar specific, as unity/vrchat requires certain bones with certain names. you can also try using auto rigging tools like rigify (riggify?) but make sure to compare to 
+tutorials should be vrchat avatar specific, as unity/vrchat requires certain bones with certain names. you can also try using auto rigging tools like rigify (riggify?) but make sure to compare to
 
 the tutorial i've used is rainhet chaneru's:
 	armature: [https://www.youtube.com/watch?v=2QkgqsRyRMo]
@@ -103,7 +103,7 @@ she has a whole guide series about making avatars from scratch that is one of th
 
 - in edit mode go to material properties, click on hair texture & click the select button
   (this will select all faces that use the texture)
-- if you only want one hairstyle on the base body: hit Y (split) to split the hair from the head without separating it. 
+- if you only want one hairstyle on the base body: hit Y (split) to split the hair from the head without separating it.
   (this will be useful for blendshapes to hide it under hats etc.)
 - if you have multiple hairstyles don't split it. just select the material and proceed:
 
@@ -141,7 +141,7 @@ she has a whole guide series about making avatars from scratch that is one of th
 
 visemes are the mouth shapes that vrchat uses to make your avi talk. these are made with blendshapes/shapekeys, and they deform the mesh in little saved poses without ruining the base model. you can also use shapekeys to make other parts of the mesh move, which you can later turn into a toggle or a part of a toggle in unity. things like hiding the hair inside a helmet or facial expressions.
 
-- viseme/shapekey tutorial: [https://www.youtube.com/watch?v=8hCXeUSisFU&t=1489s] 
+- viseme/shapekey tutorial: [https://www.youtube.com/watch?v=8hCXeUSisFU&t=1489s]
 (she doesn't go over every viseme, but the setup info is good. HIGHLY recommend just grabbing a mirror and referencing your own face! and it's WoW. go big and silly. you know what they move like.)(also, it starts with a blinking pose, but WoW characters just have a funny little eyelid texture that blips in, so feel free to ignore/delete that if you don't wanna bother with it.)
 - list of vrchat required visemes: [https://wiki.vrchat.com/wiki/Visemes] note that unity prefers i, o, and u, to be named ih, oh, and ou, or you'll have to manually assign those later.
 
@@ -152,7 +152,7 @@ technically visemes aren't necessary and you can upload an avatar just fine with
 ----- EXPORTING AVATAR -----
 --------------------------------------------------------------------
 
-MAKE SURE youre COMPLETELY HAPPY with all this before moving on! Unity is not as friendly as blender about making alterations. 
+MAKE SURE youre COMPLETELY HAPPY with all this before moving on! Unity is not as friendly as blender about making alterations.
 
 - ensure all outfit layers are visible.
 - ensure body texture is assigned to your nude/underwear base.
@@ -228,17 +228,18 @@ for now the main body won't be connected to all the outfit materials, we will ad
 
 ---- GHOSTLY AVATAR MATERIAL FOR WHEN YOURE DEAD -----
 --------------------------------------------------------------------
-  
-  I made a slightly more complicated shader for the dead outfit. it's not very good and doesn't do a lot of what i want so i encourage everyone to mess around... help me... 
-	
-  here's a really quick rundown of are all the toggles i did. since vi only had one hairstyle i also had to make a new material for the dead version of the hair. 
-  
+
+  I made a slightly more complicated shader for the dead outfit. it's really simple and doesn't do a lot of what i want so i encourage everyone to mess around... maybe we can figure out some effects...
+
+  here's a really quick rundown of are all the toggles i did. since vi only had one hairstyle i also had to make a new material for the dead version of the hair.
+
+all ghost mats:
 - poiyomi toon
 - top right setting change from opaque to transparent
 - Color & normals > Color and alpha [RGBA 105 112 128 150]
 - alpha options > uncheck force opaque
-- Special FX > emissions > check & open emission 1 (0 doesnt do anything) 
-	- if material has transparency like hair, add emission mask texture 
+- Special FX > emissions > check & open emission 1 (0 doesnt do anything)
+	- if material has transparency like hair, add emission mask texture
 		(make a copy of the hair & turn hair white and background black in whatever art program)
 	- Emission Color [RGBA 134 178 183 255]
 	- Emission strength 5
@@ -246,9 +247,9 @@ for now the main body won't be connected to all the outfit materials, we will ad
 - rendering > cull off, ZClip on
 - fallback: standard > transparent > doublesided
 
-right click on the shader and copy material properties. paste this onto all your dead materials (you'll have to replace the textures each time! 
+right click on the shader and copy material properties. paste this onto all your dead materials (you'll have to replace the textures each time!
 it took a little fiddling to get the hair to behave. I found copying the material properties of the normal hair and pasting it on the ghost hair and then changing it back to transparent worked.)
-  
+
 
 ---- AVATAR DESCRIPTOR -----
 --------------------------------------------------------------------
@@ -259,11 +260,11 @@ this is the absolute base important thing you need for your avatar to work in vr
 - click Add Component and search for VRC Avatar Descriptor.
   - view > edit view position. you'll see a little floating sphere with a gimbal to move around in the scene. align this vertically with the eyeline of your avatar, and align the depth with approximately the eyesockets. keep it centered.
   - Lipsync > Auto Detect. check that all your visemes got copied correctly and assign any missing ones.
-  - if you kept the eyelid texture and made eye bones, you can futz with the Eye Look settings here. 
+  - if you kept the eyelid texture and made eye bones, you can futz with the Eye Look settings here.
 
 TECHNICALLY you can call this done & upload it! it's playable now but it'll be wearing every outfit at once. let's keep adding stuff >:D
-  
-  
+
+
 
 ---- OUTFIT SWAP TOGGLES -----
 --------------------------------------------------------------------
@@ -290,7 +291,7 @@ now we repeat all that for the remaining outfits:
 - change object toggle to new outfit
 - change material swap's material to new outfit material (leave renderer and slot as is)
 
-if you want your underwear as an outfit: 
+if you want your underwear as an outfit:
 - paste another of the same VRCFury toggle
 - change menu path name (outfits/[outfitnamewhatever])
 - delete any actions. the rest of the outfits turn on the clothing so now they are automatically OFF for this one, and the material is already correct.
@@ -322,6 +323,3 @@ as long as the warning panel is only yellows, no red, then you're good to upload
 
 
 thanks for reading all this!! i hope it isn't too difficult. feel free to message me if you need help at any point in the process!
-
-
-
