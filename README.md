@@ -3,7 +3,6 @@
 ------------------ for the blackwing guard! ---------  
 
 
-----------------------------------------------------------
 things to get:
 
 - [warcraft model viewer](https://wowmodelviewer.net/download/)
@@ -58,7 +57,6 @@ don't forget to get [CATS blender plugin!](https://git.neoneko.org/NeoNeko/Cats-
 it will help immensely with the armature and weight painting later.
 
 ## AVATAR PREP
---------------------------------------------------------------------
 
 - in a new blender file, drag in the body obj &  hit import. some textures may be missing, this is ok
 - name the object in the collection to something suitable (BASE or BODY or something. then when you do outfits later name those after the outfit etc etc. if you dont name these clearly now you will hate doing unity stuff later)
@@ -78,7 +76,6 @@ it will help immensely with the armature and weight painting later.
 
 
 ## BASE BODY ARMATURE & WEIGHTS
---------------------------------------------------------------------
 
 any vrchat avatar tutorial about adding armatures should work here.
 (there's a good chance you won't need eye bones since warcraft avis just use textures)
@@ -95,7 +92,6 @@ do the same parent > keep offset thing and attach them to appropriate anchors. c
 
 
 ## PREPPING OUTFITS AND HAIR
---------------------------------------------------------------------
 
 - **go back to object mode.** hide your base avatar for now & repeat all AVATAR PREP steps for dressed avatars you exported earlier. it may be easier to do one of these at a time, so proceed to:
 
@@ -136,7 +132,6 @@ do the same parent > keep offset thing and attach them to appropriate anchors. c
 
 
 ## VISEMES, SHAPEKEYS/BLENDSHAPES
---------------------------------------------------------------------
 
 visemes are the mouth shapes that vrchat uses to make your avi talk. these are made with blendshapes/shapekeys, and they deform the mesh in little saved poses without ruining the base model. you can also use shapekeys to make other parts of the mesh move, which you can later turn into a toggle or a part of a toggle in unity. things like hiding the hair inside a helmet or facial expressions.
 
@@ -149,7 +144,6 @@ technically visemes aren't necessary and you can upload an avatar just fine with
 
 
 ## EXPORTING AVATAR
---------------------------------------------------------------------
 
 MAKE SURE youre COMPLETELY HAPPY with all this before moving on! Unity is not as friendly as blender about making alterations.
 
@@ -171,7 +165,6 @@ there are a lot of tutorials out there. many are presuming the avatar is already
 
 
 ## VCC SETUP
---------------------------------------------------------------------
 
 once you have the Vrchat Creator Companion, follow all the settings in there and it should walk you through getting a compatible version of unity installed as well. make sure you have all these packages/prefabs installed with VCC:
 
@@ -183,7 +176,6 @@ everytime you start an avatar project it'll show you packages you can toggle on 
 
 
 ## AVATAR IMPORT/SETUP
---------------------------------------------------------------------
 
 - start a 2022 avatar project and add all the prefabs you need.
 - drag your FBX into the **project** panel assets folder.
@@ -199,7 +191,6 @@ everytime you start an avatar project it'll show you packages you can toggle on 
 
 
 ## CONFIGURING RIG
---------------------------------------------------------------------
 
 - select avatar FBX in **project** panel assets folder and look at the **inspector**.
 - in the *rig* tab, hit `Configure...` (it may prompt you to save.)
@@ -208,7 +199,7 @@ everytime you start an avatar project it'll show you packages you can toggle on 
 
 
 ## PREPPING MATERIALS
---------------------------------------------------------------------
+
 (i'm using poiyomi toon shaders for this - other shaders will work but the settings are different and idk them.)
 make sure you are logged in to the VRChat SDK with the builder window visible - there's usually a warning about the textures that has an auto fix button. as soon as it shows up make sure to hit it or it's gonna make you redo all this hard work later.
 
@@ -226,7 +217,6 @@ repeat these steps for every material except your dead/ghost one, if you made on
 for now the main body won't be connected to all the outfit materials, we will add toggles for that soon.
 
 ### GHOSTLY material for when you're dead
---------------------------------------------------------------------
 
   I made a slightly more complicated shader for the dead outfit. it's really simple and doesn't do a lot of what i want so i encourage everyone to mess around... maybe we can figure out some effects... we're restricted by the need for backfaces to be visible with these avatars.
 
@@ -251,7 +241,6 @@ it took a little fiddling to get the hair to behave. I found copying the materia
 
 
 ## AVATAR DESCRIPTOR
---------------------------------------------------------------------
 
 this is the absolute base important thing you need for your avatar to work in vrchat.
 
@@ -266,7 +255,6 @@ TECHNICALLY you can call this done & upload it! it's playable now but it'll be w
 
 
 ## OUTFIT SWAP TOGGLES
---------------------------------------------------------------------
 
 - select avatar in  **hierarchy** (you should see a blue selection outline) and look at the **inspector**.
 - hit `Add Component` and search `Toggle (VRCFury)`
@@ -302,7 +290,6 @@ you can test all these toggles by adding `gesture manager`. it's in the `tools` 
 
 
 ## OPTIONAL PREFABS
---------------------------------------------------------------------
 
 adding premade prefabs like this isn't too hard, they usually come with tutorials. most of the time you just find the right prefab and drag it on to the character in the hierarchy. you can do it i believe in you
 
@@ -314,7 +301,6 @@ check out places like Booth, Jinxxy, Nexxy, gumroad etc. if you want to find mor
 
 
 ## OPTIONAL PHYSBONES
---------------------------------------------------------------------
 
 [this tutorial](https://www.youtube.com/watch?v=PTTnWUkswkU) goes over it all except a couple of new things you can add (squash and stretch). if you made any physbones earlier in blender and have been wondering when they come into play, now is their time to shine.
 
@@ -324,7 +310,6 @@ if the scalings of the `collision radius` seem really, really weird (like they'r
 
 
 ## UPLOADING AVATAR
---------------------------------------------------------------------
 
 open `VRChat SDK > Control Panel` if it isn't still open. you should have already logged in earlier. go to the *builder* tab and make sure the right avatar is selected. name it! write a desc! capture a pic from the scene!
 
@@ -340,7 +325,6 @@ thanks for reading all this!! i hope it isn't too difficult. feel free to messag
 
 
 ### SOMEDAY WE'LL FIGURE OUT
---------------------------------------------------------------------
 
 - held/droppable items
 - cool effects like smoke and flames and stuff
