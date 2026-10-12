@@ -135,7 +135,7 @@ visemes are the mouth shapes that vrchat uses to make your avi talk. these are m
 
 - [viseme/shapekey tutorial](https://www.youtube.com/watch?v=8hCXeUSisFU&t=1489s)
 (she doesn't go over every viseme, but the setup info is good. HIGHLY recommend just grabbing a mirror and referencing your own face! and it's WoW. go big and silly. you know what they move like.)(also, it starts with a blinking pose, but WoW characters just have a funny little eyelid texture that blips in, so feel free to ignore/delete that if you don't wanna bother with it.)
-- [list of vrchat required visemes](https://wiki.vrchat.com/wiki/Visemes) note that unity prefers i, o, and u, to be named ih, oh, and ou, or you'll have to manually assign those later.
+- [list of vrchat required visemes](https://wiki.vrchat.com/wiki/Visemes) note that unity prefers `i`, `o`, and `u`, to be named `ih`, `oh`, and `ou`, or you'll have to manually assign those later.
 
 technically visemes aren't necessary and you can upload an avatar just fine without making any blendshapes, they just won't move their mouth. it's up to you!
 
