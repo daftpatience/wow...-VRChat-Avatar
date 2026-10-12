@@ -1,5 +1,4 @@
 # FORMATTING A CLASSIC WOW AVATAR FOR VRCHAT
--
 --------- struggled through by daftpatience  --------  
 ------------------ for the blackwing guard! ---------  
 
