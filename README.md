@@ -1,4 +1,4 @@
-### FORMATTING A CLASSIC WOW AVATAR FOR VRCHAT
+# FORMATTING A CLASSIC WOW AVATAR FOR VRCHAT
 -
 --------- struggled through by daftpatience  --------  
 ------------------ for the blackwing guard! ---------  
@@ -16,7 +16,7 @@ things to get:
 - Unity (follow steps during VCC install for this)
 
 -------------------------
-### 🧙‍♂️ WMV PHASE 💾
+# 🧙‍♂️ WMV PHASE 💾
 -------------------------
 
 - make your character in WMV! i didnt do this myself so i cant say anything helpful. [murog linked this tut](https://blenderartists.org/t/quick-tutorial-how-to-export-world-of-warcraft-assets-to-render-with-cycles/531730)
@@ -52,7 +52,7 @@ and all clothing textures should be named grouped something like:
 etc. etc. etc. whatever you call your outfits as long as theyre nicely grouped youre good.
 
 -------------------------
-### 🧡 BLENDER PHASE 😇
+# 🧡 BLENDER PHASE 😇
 -------------------------
 
 don't forget to get [CATS blender plugin!](https://git.neoneko.org/NeoNeko/Cats-Blender-Plugin#install)  
@@ -74,7 +74,7 @@ it will help immensely with the armature and weight painting later.
 - switch to **shading** tab
 - find hair texture node
 - attach alpha from that to the principled BSDF(or whatever shader you are using) node's alpha
-- if you only want one hairstyle and exported that on the base, skip ahead to [separating the hair from the head] before coming back to do the armature.
+- if you only want one hairstyle and exported that on the base, skip ahead to [separating the hair from the head](#separating-the-hair-from-the-head) before coming back to do the armature.
 
 
 
@@ -101,7 +101,7 @@ do the same parent > keep offset thing and attach them to appropriate anchors. c
 - **go back to object mode.** hide your base avatar for now & repeat all AVATAR PREP steps for dressed avatars you exported earlier. it may be easier to do one of these at a time, so proceed to:
 
 
-# separating the hair from the head:
+### separating the hair from the head:
 
 - in **edit mode** go to `material properties`, click on hair texture & click the select button
   (this will select all faces that use the texture)
@@ -111,7 +111,7 @@ do the same parent > keep offset thing and attach them to appropriate anchors. c
 
 
 
-# isolating clothing/accessories:
+### isolating clothing/accessories:
 
 -select all accessory textures using the same method as selecting the hair
   (shoulderpads, capes, helms, etc.)
@@ -128,7 +128,7 @@ do the same parent > keep offset thing and attach them to appropriate anchors. c
 
 
 
-# parenting outfit objects to the base armature
+### parenting outfit objects to the base armature
 
 - `modifier properties > add modifier > deform > armature`
 - select your armature in the modifier's object window there
@@ -164,7 +164,7 @@ name that fbx file something very clear so it's easy to find.
 
 
 -------------------------
-### 🔪 UNITY PHASE 👿
+# 🔪 UNITY PHASE 👿
 -------------------------
 
 welcome to hell... i'm much less confident in unity. i'll list everything i did... hopefully it all works.
@@ -226,7 +226,7 @@ repeat these steps for every material except your dead/ghost one, if you made on
 
 for now the main body won't be connected to all the outfit materials, we will add toggles for that soon.
 
-# GHOSTLY material for when you're dead
+### GHOSTLY material for when you're dead
 --------------------------------------------------------------------
 
   I made a slightly more complicated shader for the dead outfit. it's really simple and doesn't do a lot of what i want so i encourage everyone to mess around... maybe we can figure out some effects... we're restricted by the need for backfaces to be visible with these avatars.
@@ -340,7 +340,7 @@ thanks for reading all this!! i hope it isn't too difficult. feel free to messag
 
 
 
-# SOMEDAY WE'LL FIGURE OUT
+### SOMEDAY WE'LL FIGURE OUT
 --------------------------------------------------------------------
 
 - held/droppable items
