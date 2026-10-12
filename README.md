@@ -1,4 +1,4 @@
-#FORMATTING A CLASSIC WOW AVATAR FOR VRCHAT
+FORMATTING A CLASSIC WOW AVATAR FOR VRCHAT
 -
 --------- struggled through by daftpatience  --------  
 ------------------ for the blackwing guard! ---------  
@@ -92,7 +92,7 @@ the tutorial i've used is rainhet chaneru's:
 she has a whole guide series about making avatars from scratch that is one of the more thorough ones out there.
 
 IF you want any physbones (wavy hair, clothing bits, boob jiggle, etc.) you can add bones at this stage.  
-do the same parent > keep offset thing and attach them to appropriate anchors. cape > chest, skirt > hips, hair > head, etc.
+do the same parent > keep offset thing and attach them to appropriate anchors. cape > chest, skirt > hips, hair > head, etc. if you have multiple outfits that can fit the same bones, make sure to weight paint them properly.
 
 
 
@@ -319,9 +319,10 @@ adding premade prefabs like this is both very easy and tons of tutorials exist. 
 
 ---- OPTIONAL PHYSBONES -----
 --------------------------------------------------------------------
-https://www.youtube.com/watch?v=PTTnWUkswkU
 
+[this tutorial](https://www.youtube.com/watch?v=PTTnWUkswkU) goes over it all except a couple of new things (squash and stretch). if you made any physbones earlier in blender and have been wondering when they come into play, now is their time to shine.
 
+if the scalings of the `collision radius` seem really, really weird (like they're gigantic unless you bring them down to .00001 size) then you didn't export the fbx with the right scaling settings (fbx all) and you're gonna have to start over in unity from the top or give up on physbones. don't ask me why i know this.
 
 
 ---- UPLOADING AVATAR -----
