@@ -1,4 +1,4 @@
-FORMATTING A CLASSIC WOW AVATAR FOR VRCHAT
+### FORMATTING A CLASSIC WOW AVATAR FOR VRCHAT
 -
 --------- struggled through by daftpatience  --------  
 ------------------ for the blackwing guard! ---------  
@@ -16,7 +16,7 @@ things to get:
 - Unity (follow steps during VCC install for this)
 
 -------------------------
--------🧙‍♂️ WMV PHASE 💾-------
+### 🧙‍♂️ WMV PHASE 💾
 -------------------------
 
 - make your character in WMV! i didnt do this myself so i cant say anything helpful. [murog linked this tut](https://blenderartists.org/t/quick-tutorial-how-to-export-world-of-warcraft-assets-to-render-with-cycles/531730)
@@ -52,13 +52,13 @@ and all clothing textures should be named grouped something like:
 etc. etc. etc. whatever you call your outfits as long as theyre nicely grouped youre good.
 
 -------------------------
------🧡 BLENDER PHASE 😇-----
+### 🧡 BLENDER PHASE 😇
 -------------------------
 
 don't forget to get [CATS blender plugin!](https://git.neoneko.org/NeoNeko/Cats-Blender-Plugin#install)  
 it will help immensely with the armature and weight painting later.
 
------ AVATAR PREP -----
+## AVATAR PREP
 --------------------------------------------------------------------
 
 - in a new blender file, drag in the body obj &  hit import. some textures may be missing, this is ok
@@ -78,7 +78,7 @@ it will help immensely with the armature and weight painting later.
 
 
 
------ BASE BODY ARMATURE & WEIGHTS -----
+## BASE BODY ARMATURE & WEIGHTS
 --------------------------------------------------------------------
 
 any vrchat avatar tutorial about adding armatures should work here.
@@ -87,7 +87,7 @@ tutorials should be vrchat avatar specific, as unity/vrchat requires certain bon
 
 the tutorial i've used is rainhet chaneru's:
 - [armature](https://www.youtube.com/watch?v=2QkgqsRyRMo)
-- [weight painting](https://www.youtube.com/watch?v=_PB-H7t0kHI)
+- [weight painting](https://www.youtube.com/watch?v=_PB-H7t0kHI)  
 she has a whole guide series about making avatars from scratch that is one of the more thorough ones out there.
 
 IF you want any physbones (wavy hair, clothing bits, boob jiggle, etc.) you can add bones at this stage.  
@@ -95,14 +95,13 @@ do the same parent > keep offset thing and attach them to appropriate anchors. c
 
 
 
------ PREPPING OUTFITS AND HAIR-----
+## PREPPING OUTFITS AND HAIR
 --------------------------------------------------------------------
 
 - **go back to object mode.** hide your base avatar for now & repeat all AVATAR PREP steps for dressed avatars you exported earlier. it may be easier to do one of these at a time, so proceed to:
 
 
----separating the hair from the head:---
---------------------------------------------------------------------
+# separating the hair from the head:
 
 - in **edit mode** go to `material properties`, click on hair texture & click the select button
   (this will select all faces that use the texture)
@@ -112,8 +111,7 @@ do the same parent > keep offset thing and attach them to appropriate anchors. c
 
 
 
----isolating clothing/accessories:---
---------------------------------------------------------------------
+# isolating clothing/accessories:
 
 -select all accessory textures using the same method as selecting the hair
   (shoulderpads, capes, helms, etc.)
@@ -130,8 +128,7 @@ do the same parent > keep offset thing and attach them to appropriate anchors. c
 
 
 
----parenting outfit objects to the base armature---
---------------------------------------------------------------------
+# parenting outfit objects to the base armature
 
 - `modifier properties > add modifier > deform > armature`
 - select your armature in the modifier's object window there
@@ -139,7 +136,7 @@ do the same parent > keep offset thing and attach them to appropriate anchors. c
 
 
 
------ VISEMES, SHAPEKEYS/BLENDSHAPES -----
+## VISEMES, SHAPEKEYS/BLENDSHAPES
 --------------------------------------------------------------------
 
 visemes are the mouth shapes that vrchat uses to make your avi talk. these are made with blendshapes/shapekeys, and they deform the mesh in little saved poses without ruining the base model. you can also use shapekeys to make other parts of the mesh move, which you can later turn into a toggle or a part of a toggle in unity. things like hiding the hair inside a helmet or facial expressions.
@@ -152,7 +149,7 @@ technically visemes aren't necessary and you can upload an avatar just fine with
 
 
 
------ EXPORTING AVATAR -----
+## EXPORTING AVATAR
 --------------------------------------------------------------------
 
 MAKE SURE youre COMPLETELY HAPPY with all this before moving on! Unity is not as friendly as blender about making alterations.
@@ -167,14 +164,14 @@ name that fbx file something very clear so it's easy to find.
 
 
 -------------------------
-------🔪 UNITY PHASE 👿------
+### 🔪 UNITY PHASE 👿
 -------------------------
 
 welcome to hell... i'm much less confident in unity. i'll list everything i did... hopefully it all works.
 there are a lot of tutorials out there. many are presuming the avatar is already fully setup...  good luck 😭
 
 
------ VCC SETUP -----
+## VCC SETUP
 --------------------------------------------------------------------
 
 once you have the Vrchat Creator Companion, follow all the settings in there and it should walk you through getting a compatible version of unity installed as well. make sure you have all these packages/prefabs installed with VCC:
@@ -186,7 +183,7 @@ once you have the Vrchat Creator Companion, follow all the settings in there and
 everytime you start an avatar project it'll show you packages you can toggle on - make sure these ones are checked.
 
 
----- AVATAR IMPORT/SETUP -----
+## AVATAR IMPORT/SETUP
 --------------------------------------------------------------------
 
 - start a 2022 avatar project and add all the prefabs you need.
@@ -202,7 +199,7 @@ everytime you start an avatar project it'll show you packages you can toggle on 
 - drag ALL your textures into that folder. we will apply them where they belong later.
 
 
----- CONFIGURING RIG -----
+## CONFIGURING RIG
 --------------------------------------------------------------------
 
 - select avatar FBX in **project** panel assets folder and look at the **inspector**.
@@ -211,7 +208,7 @@ everytime you start an avatar project it'll show you packages you can toggle on 
 - it's okay if your avatar doesn't have the same amt or kinds of bones as unity shows available to assign. many wow models do not have all 5 fingers, and you might have more due to physbones - they don't need to be assigned. [check VRC creator companion for the absolutely necessary ones](https://creators.vrchat.com/avatars/rig-requirements/)
 
 
----- PREPPING MATERIALS -----
+## PREPPING MATERIALS
 --------------------------------------------------------------------
 (i'm using poiyomi toon shaders for this - other shaders will work but the settings are different and idk them.)
 make sure you are logged in to the VRChat SDK with the builder window visible - there's usually a warning about the textures that has an auto fix button. as soon as it shows up make sure to hit it or it's gonna make you redo all this hard work later.
@@ -229,10 +226,10 @@ repeat these steps for every material except your dead/ghost one, if you made on
 
 for now the main body won't be connected to all the outfit materials, we will add toggles for that soon.
 
----- GHOSTLY AVATAR MATERIAL FOR WHEN YOURE DEAD -----
+# GHOSTLY material for when you're dead
 --------------------------------------------------------------------
 
-  I made a slightly more complicated shader for the dead outfit. it's really simple and doesn't do a lot of what i want so i encourage everyone to mess around... maybe we can figure out some effects...
+  I made a slightly more complicated shader for the dead outfit. it's really simple and doesn't do a lot of what i want so i encourage everyone to mess around... maybe we can figure out some effects... we're restricted by the need for backfaces to be visible with these avatars.
 
   here's a really quick rundown of are all the toggles i did. since vi only had one hairstyle i also had to make a new material for the dead version of the hair.
 
@@ -254,7 +251,7 @@ right click on the shader and copy material properties. paste this onto all your
 it took a little fiddling to get the hair to behave. I found copying the material properties of the normal hair and pasting it on the ghost hair and then changing it back to transparent worked.)
 
 
----- AVATAR DESCRIPTOR -----
+## AVATAR DESCRIPTOR
 --------------------------------------------------------------------
 
 this is the absolute base important thing you need for your avatar to work in vrchat.
@@ -269,7 +266,7 @@ TECHNICALLY you can call this done & upload it! it's playable now but it'll be w
 
 
 
----- OUTFIT SWAP TOGGLES -----
+## OUTFIT SWAP TOGGLES
 --------------------------------------------------------------------
 
 - select avatar in  **hierarchy** (you should see a blue selection outline) and look at the **inspector**.
@@ -302,29 +299,32 @@ if you want your underwear as an outfit:
 
 if you don't want the underwear as an outfit, choose one of the other outfit toggles and set that one to `Default On` AND `This Is Exclusive Off State`
 
-you can test all these toggles by adding `gesture manager`. it's in the `tools` section at the top.
+you can test all these toggles by adding `gesture manager`. it's in the `tools` section at the top. It's a good idea to check your work as you go.
 
 
----- OPTIONAL PREFABS -----
+## OPTIONAL PREFABS
 --------------------------------------------------------------------
 
-adding premade prefabs like this is both very easy and tons of tutorials exist. most of the time you just find the right prefab and drag it on to the character in the hierarchy. you can do it i believe
+adding premade prefabs like this isn't too hard, they usually come with tutorials. most of the time you just find the right prefab and drag it on to the character in the hierarchy. you can do it i believe in you
 
 - [gogoloco](https://gogoloco.net/) lets you do a lot of nice sitting/lying poses in and out of VR and also adjust your position in space (flying!)
 (it's honestly a little easier to download it from gumroad than to install it with VCC)
 - [syncdance](https://kiny.booth.pm/items/4881102)
-- there are a lot more out there!! gogoloco is the one essential imo.
+
+check out places like Booth, Jinxxy, Nexxy, gumroad etc. if you want to find more things to put on your avi.
 
 
----- OPTIONAL PHYSBONES -----
+## OPTIONAL PHYSBONES
 --------------------------------------------------------------------
 
-[this tutorial](https://www.youtube.com/watch?v=PTTnWUkswkU) goes over it all except a couple of new things (squash and stretch). if you made any physbones earlier in blender and have been wondering when they come into play, now is their time to shine.
+[this tutorial](https://www.youtube.com/watch?v=PTTnWUkswkU) goes over it all except a couple of new things you can add (squash and stretch). if you made any physbones earlier in blender and have been wondering when they come into play, now is their time to shine.
 
 if the scalings of the `collision radius` seem really, really weird (like they're gigantic unless you bring them down to .00001 size) then you didn't export the fbx with the right scaling settings (fbx all) and you're gonna have to start over in unity from the top or give up on physbones. don't ask me why i know this.
 
+`gesture manager` is exceptionally useful for testing these!
 
----- UPLOADING AVATAR -----
+
+## UPLOADING AVATAR
 --------------------------------------------------------------------
 
 open `VRChat SDK > Control Panel` if it isn't still open. you should have already logged in earlier. go to the *builder* tab and make sure the right avatar is selected. name it! write a desc! capture a pic from the scene!
@@ -334,9 +334,15 @@ as long as the warning panel is only yellows, no red, then you're good to upload
 
 thanks for reading all this!! i hope it isn't too difficult. feel free to message me if you need help at any point in the process! i'd be so happy to help prep anything! especially the blender stuff. armatures are fun to me :D
 
----- SOMEDAY WE'LL FIGURE OUT -----
+
+
+
+
+
+
+# SOMEDAY WE'LL FIGURE OUT
 --------------------------------------------------------------------
 
-- held items
-- cooler effects like smoke and flames and stuff
-- maybe somehow exporting and applying animations like idling
+- held/droppable items
+- cool effects like smoke and flames and stuff
+- maybe somehow exporting and applying animations... that's some big brained stuff...
