@@ -71,7 +71,7 @@ it will help immensely with the armature and weight painting later.
 
 
 **for any textures with transparency (usually hair):**
-- switch to `shading` tab
+- switch to **shading** tab
 - find hair texture node
 - attach alpha from that to the principled BSDF(or whatever shader you are using) node's alpha
 - if you only want one hairstyle and exported that on the base, skip ahead to [separating the hair from the head] before coming back to do the armature.
