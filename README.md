@@ -71,7 +71,7 @@ it will help immensely with the armature and weight painting later.
 
 
 **for any textures with transparency (usually hair):**
-- switch to `shading` tab
+- switch to **shading** tab
 - find hair texture node
 - attach alpha from that to the principled BSDF(or whatever shader you are using) node's alpha
 - if you only want one hairstyle and exported that on the base, skip ahead to [separating the hair from the head] before coming back to do the armature.
@@ -83,7 +83,7 @@ it will help immensely with the armature and weight painting later.
 
 any vrchat avatar tutorial about adding armatures should work here.
 (there's a good chance you won't need eye bones since warcraft avis just use textures)
-tutorials should be vrchat avatar specific, as unity/vrchat requires certain bones with certain names. you can also try using auto rigging tools like rigify (riggify?) but make sure to compare to
+tutorials should be vrchat avatar specific, as unity/vrchat requires certain bones with certain names. you can also try using auto rigging tools like rigify (riggify?) but make sure to compare to [VRC Rig Requirements](https://creators.vrchat.com/avatars/rig-requirements/)
 
 the tutorial i've used is rainhet chaneru's:
 - [armature](https://www.youtube.com/watch?v=2QkgqsRyRMo)
