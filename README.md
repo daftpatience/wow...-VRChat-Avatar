@@ -177,7 +177,7 @@ there are a lot of tutorials out there. many are presuming the avatar is already
 once you have the Vrchat Creator Companion, follow all the settings in there and it should walk you through getting a compatible version of unity installed as well. make sure you have all these packages/prefabs installed with VCC:
 
 	- vrcfury (for making toggles)
-	- poiyomi toon (optionally, for shaders)
+	- poiyomi toon (for shaders)
 	- gesturemanager (for testing menus)
 
 everytime you start an avatar project it'll show you packages you can toggle on - make sure these ones are checked.
@@ -211,7 +211,7 @@ everytime you start an avatar project it'll show you packages you can toggle on 
 ---- PREPPING MATERIALS -----
 --------------------------------------------------------------------
 (i'm using poiyomi toon shaders for this - other shaders will work but the settings are different and idk them.)
-make sure you are logged in to the VRChat SDK with the builder window visible - there's a warning about textures that has an auto fix button. hit that before editing any textures here or it's gonna make you redo all this hard work later.
+make sure you are logged in to the VRChat SDK with the builder window visible - there's usually a warning about the textures that has an auto fix button. as soon as it shows up make sure to hit it or it's gonna make you redo all this hard work later.
 
 - in the project view's materials folder there should be many gray orbs with familiar names. pick one and look at the inspector.
   - unlock shader if it is locked.
@@ -307,7 +307,7 @@ you can test all these toggles by adding gesture manager. it's in the tools sect
 
 these come with instructions, just do what they tell ya!
 
-- gogoloco [https://gogoloco.net/] lets you do a lot of nice sitting/lying poses in and out of VR and also adjusting your position in space.
+- gogoloco [https://gogoloco.net/] lets you do a lot of nice sitting/lying poses in and out of VR and also adjust your position in space (flying!)
 (it's honestly a little easier to download it from gumroad than to install it with VCC)
 - syncdance [https://kiny.booth.pm/items/4881102]
 - there are a lot more out there!! gogoloco is the one essential imo.
