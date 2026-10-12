@@ -75,9 +75,9 @@ it will help immensely with the armature and weight painting later.
 
 ## BASE BODY ARMATURE & WEIGHTS
 
-any vrchat avatar tutorial about adding armatures should work here.
+any VRChat avatar tutorial about adding armatures should work here.
 (there's a good chance you won't need eye bones since warcraft avis just use textures)
-tutorials should be vrchat avatar specific, as unity/vrchat requires certain bones with certain names. you can also try using auto rigging tools like rigify (riggify?) but make sure to compare to [VRC Rig Requirements](https://creators.vrchat.com/avatars/rig-requirements/)
+tutorials should be VRChat avatar specific, as unity/vrchat requires certain bones with certain names. you can also try using auto rigging tools like rigify (riggify?) but make sure to compare to [VRC Rig Requirements](https://creators.vrchat.com/avatars/rig-requirements/)
 
 the tutorial i've used is rainhet chaneru's:
 - [armature](https://www.youtube.com/watch?v=2QkgqsRyRMo)
@@ -131,13 +131,13 @@ do the same parent > keep offset thing and attach them to appropriate anchors. c
 
 ## VISEMES, SHAPEKEYS/BLENDSHAPES
 
-visemes are the mouth shapes that vrchat uses to make your avi talk. these are made with blendshapes/shapekeys, and they deform the mesh in little saved poses without ruining the base model. you can also use shapekeys to make other parts of the mesh move, which you can later turn into a toggle or a part of a toggle in unity. things like smushing the hair inside a helmet, or facial expressions.
+visemes are the mouth shapes that VRChat uses to make your avi talk. these are made with blendshapes/shapekeys, and they deform the mesh in little saved poses without ruining the base model. you can also use shapekeys to make other parts of the mesh move, which you can later turn into a toggle or a part of a toggle in unity. things like smushing the hair inside a helmet, or facial expressions.
 
-technically visemes aren't necessary. if you make a single jaw bone parented to you head armature and weight paint it only to the jaw area (so that it doesn't snag the upper lip) vrchat will use that instead and you'll have a basic jaw flap animation for talking. DON'T do this if you make viseme blendshapes for the mouthsounds or they'll stack and you'll look horrific.
+technically visemes aren't necessary. if you make a single jaw bone parented to you head armature and weight paint it only to the jaw area (so that it doesn't snag the upper lip) VRChat will use that instead and you'll have a basic jaw flap animation for talking. DON'T do this if you make viseme blendshapes for the mouthsounds or they'll stack and you'll look horrific.
 
 - [viseme/shapekey tutorial](https://www.youtube.com/watch?v=8hCXeUSisFU&t=1489s)
 (she doesn't go over every viseme, but the setup info is good. HIGHLY recommend just grabbing a mirror and referencing your own face! and it's WoW. go big and silly. you know what they move like.)(also, it starts with a blinking pose, but WoW characters just have a funny little eyelid texture that blips in, so feel free to ignore/delete that if you don't wanna bother with it.)
-- [list of vrchat required visemes](https://wiki.vrchat.com/wiki/Visemes) note that unity prefers `i`, `o`, and `u`, to be named `ih`, `oh`, and `ou`, or you'll have to manually assign those later.
+- [list of VRChat required visemes](https://wiki.vrchat.com/wiki/Visemes) note that unity prefers `i`, `o`, and `u`, to be named `ih`, `oh`, and `ou`, or you'll have to manually assign those later.
 
 
 
@@ -159,12 +159,12 @@ name that fbx file something very clear so it's easy to find.
 # 🔪 UNITY PHASE 👿
 
 welcome to hell... i'm much less confident in unity. i'll list everything i did... hopefully it all works.
-there are a lot of tutorials out there. many are presuming the avatar is already fully setup...  good luck 😭
+good luck 😭
 
 
 ## VCC SETUP
 
-once you have the Vrchat Creator Companion, follow all the settings in there and it should walk you through getting a compatible version of unity installed as well. make sure you have all these packages/prefabs installed with VCC:
+once you have the VRChat Creator Companion, follow all the settings in there and it should walk you through getting a compatible version of unity installed as well. make sure you have all these packages/prefabs installed with VCC:
 
 	- vrcfury (for making toggles)
 	- poiyomi toon (for shaders)
@@ -182,7 +182,7 @@ everytime you start an avatar project it'll show you packages you can toggle on 
 - now we look at the **inspector** panel.
 - in the *model* tab, check `Legacy Blend Shape Normals` on and apply.
 - in the *rig* tab, change animation type to `Humanoid` and apply.
-- in the *materials* tab, change location to Use External Materials and apply. this will make a materials folder in your assets.
+- in the *materials* tab, change location to Use `External Materials` and apply. this will make a materials folder in your assets.
 - in the materials folder, `right click > create > folder` name it Textures
 
 - drag ALL your textures into that folder. we will apply them where they belong later.
@@ -240,7 +240,7 @@ it took a little fiddling to get the hair to behave. I found copying the materia
 
 ## AVATAR DESCRIPTOR
 
-this is the absolute base important thing you need for your avatar to work in vrchat.
+this is the absolute base important thing you need for your avatar to work in VRChat.
 
 - select your FBX in the  **hierarchy** and look at **inspector**.
 - click `Add Component` and search for `VRC Avatar Descriptor`.
