@@ -133,7 +133,7 @@ do the same parent > keep offset thing and attach them to appropriate anchors. c
 
 visemes are the mouth shapes that vrchat uses to make your avi talk. these are made with blendshapes/shapekeys, and they deform the mesh in little saved poses without ruining the base model. you can also use shapekeys to make other parts of the mesh move, which you can later turn into a toggle or a part of a toggle in unity. things like smushing the hair inside a helmet, or facial expressions.
 
-<small>technically visemes aren't necessary. if you make a jaw bone parented to you head armature and weight paint it only to the jaw area (so that it doesn't snag the upper lip) vrchat will use that instead and you'll have a basic jaw flap animation for talking. DON'T do this if you make viseme blendshapes for the mouthsounds or they'll stack and you'll look horrific.</small>
+technically visemes aren't necessary. if you make a single jaw bone parented to you head armature and weight paint it only to the jaw area (so that it doesn't snag the upper lip) vrchat will use that instead and you'll have a basic jaw flap animation for talking. DON'T do this if you make viseme blendshapes for the mouthsounds or they'll stack and you'll look horrific.
 
 - [viseme/shapekey tutorial](https://www.youtube.com/watch?v=8hCXeUSisFU&t=1489s)
 (she doesn't go over every viseme, but the setup info is good. HIGHLY recommend just grabbing a mirror and referencing your own face! and it's WoW. go big and silly. you know what they move like.)(also, it starts with a blinking pose, but WoW characters just have a funny little eyelid texture that blips in, so feel free to ignore/delete that if you don't wanna bother with it.)
