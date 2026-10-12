@@ -19,8 +19,7 @@ things to get:
 -------🧙‍♂️ WMV PHASE 💾-------
 -------------------------
 
-- make your character in WMV! i didnt do this myself so i cant say anything helpful. [murog linked this tut]
-(https://blenderartists.org/t/quick-tutorial-how-to-export-world-of-warcraft-assets-to-render-with-cycles/531730)
+- make your character in WMV! i didnt do this myself so i cant say anything helpful. [murog linked this tut](https://blenderartists.org/t/quick-tutorial-how-to-export-world-of-warcraft-assets-to-render-with-cycles/531730)
 
 - export your avatar as an obj file.
 - if you want to have multiple toggleable outfits, then first export only your avatar in underwear or no clothes at all as the base body (otherwise you'll be missing parts, like legs under skirts. that's fine if you don't want them to clip but it's more work to put them back later.)
