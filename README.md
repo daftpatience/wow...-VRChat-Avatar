@@ -15,7 +15,6 @@ things to get:
 
 -------------------------
 # 🧙‍♂️ WMV PHASE 💾
--------------------------
 
 - make your character in WMV! i didnt do this myself so i cant say anything helpful. [murog linked this tut](https://blenderartists.org/t/quick-tutorial-how-to-export-world-of-warcraft-assets-to-render-with-cycles/531730)
 
@@ -51,7 +50,6 @@ etc. etc. etc. whatever you call your outfits as long as theyre nicely grouped y
 
 -------------------------
 # 🧡 BLENDER PHASE 😇
--------------------------
 
 don't forget to get [CATS blender plugin!](https://git.neoneko.org/NeoNeko/Cats-Blender-Plugin#install)  
 it will help immensely with the armature and weight painting later.
@@ -158,7 +156,6 @@ name that fbx file something very clear so it's easy to find.
 
 -------------------------
 # 🔪 UNITY PHASE 👿
--------------------------
 
 welcome to hell... i'm much less confident in unity. i'll list everything i did... hopefully it all works.
 there are a lot of tutorials out there. many are presuming the avatar is already fully setup...  good luck 😭
