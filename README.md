@@ -209,7 +209,7 @@ everytime you start an avatar project it'll show you packages you can toggle on 
 - select avatar FBX in **project** panel assets folder and look at the **inspector**.
 - in the *rig* tab, hit `Configure...` (it may prompt you to save.)
 - inspect all the bones (there are little buttons to see the head and hands and stuff) for any mismatched connections. If you named everything carefully, it should all be good but errors can happen. eg. i had to assign the chest. make sure to hit apply and then done to get out of there.
-- it's okay if your avatar doesn't have the same amt or kinds of bones as unity shows available to assign. many wow models do not have all 5 fingers, and rigify will give you unnecessary ones - they don't need to be assigned. [check VRC creator companion for the absolutely necessary ones](https://creators.vrchat.com/avatars/rig-requirements/)
+- it's okay if your avatar doesn't have the same amt or kinds of bones as unity shows available to assign. many wow models do not have all 5 fingers, and you might have more due to physbones - they don't need to be assigned. [check VRC creator companion for the absolutely necessary ones](https://creators.vrchat.com/avatars/rig-requirements/)
 
 
 ---- PREPPING MATERIALS -----
