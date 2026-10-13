@@ -249,8 +249,8 @@ this is the absolute base important thing you need for your avatar to work in VR
 - click `Add Component` and search for `VRC Avatar Descriptor`.
   - `view > edit view position` you'll see a little floating sphere with a gimbal to move around in the scene. align this vertically with the eyeline of your avatar, and align the depth with approximately the eyesockets. keep it centered.
   - `Lipsync > Auto Detect` check that all your visemes got copied correctly and assign any missing ones.
-  - if you kept the eyelid texture, open the `eye look > eyelids` dropdown:
-		- `eyelid type`: drag in the body mesh from the hierarchy
+  - if you kept the eyelid texture, open the `eye look > eyelids` dropdown:  
+		- `eyelid type`: drag in the body mesh from the hierarchy  
 		- under `blendshape states` set `blink` to body mesh and `looking up`/`looking down` to `none`
 
 TECHNICALLY you can call this done & upload it! it's playable now but it'll be wearing every outfit at once. let's keep adding stuff >:D
