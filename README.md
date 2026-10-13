@@ -167,13 +167,16 @@ the [rainhet tutorial](www.youtube.com/watch?v=7MDyVTpxW8) has much of this if y
 
 ## VCC SETUP
 
-once you have the VRChat Creator Companion, follow all the settings in there and it should walk you through getting a compatible version of unity installed as well. make sure you have all these packages/prefabs installed with VCC:
+once you have the VRChat Creator Companion, follow all the settings in there and it should walk you through getting a compatible version of unity installed as well. make sure you have all these packages/prefabs installed with VCC (just find `Add to VCC` button and it'll do the rest):
 
-	- vrcfury (for making toggles)
-	- poiyomi toon (for shaders)
-	- gesturemanager (for testing menus)
+- [vrcfury](https://vrcfury.com/download) (for making toggles)
+- [poiyomi toon](https://www.poiyomi.com/) (for shaders)
+- Gesture Manager (already should be in VCC)(for testing menus)
+- [Easy Expressions Manager](https://embercat.gumroad.com/l/VRCHATEASYEX) (optional but what a lifesaver if you're adding more prefabs like gogoloco and syncdances and stuff. lets you reorganize your radial menu easily)
 
-everytime you start an avatar project it'll show you packages you can toggle on - make sure these ones are checked.
+everytime you start an avatar project it'll show you packages you can toggle + on. make sure these ones are added!
+
+most of these, once installed and added to a project, will live under the `Tools` menu in unity. you can even add things to the project while it's open if you go back to the VCC window.
 
 
 ## AVATAR IMPORT/SETUP
@@ -261,7 +264,7 @@ TECHNICALLY you can call this done & upload it! it's playable now but it'll be w
 
 - select avatar in  **hierarchy** (you should see a blue selection outline) and look at the **inspector**.
 - hit `Add Component` and search `Toggle (VRCFury)`
-- in *menu path* field, type `outfits/(outfitname1)`
+- in *menu path* field, type `outfits/fishingoutfit` or whatever you want to call it. the `outfits/` part makes a folder, and you can tell other items to follow this same file path.
 - Add `Action > Object Toggle` (we are showing/hiding outfit parts)
   -`Turn On:` drag in the outfit from the  **hierarchy** (this is your shoulderpads/helmet/skirt/tabbard/cape/whatever. now that it is set to ON that means its OFF everywhere else but here.)
 - Add Action `+` (this is now a tiny plus rather than a big button) `> Material Swap` (we are changing the texture on the body)
@@ -277,13 +280,13 @@ TECHNICALLY you can call this done & upload it! it's playable now but it'll be w
 now we repeat all that for the remaining outfits:
 - `right click` on your prev toggle, hit `Copy Component`.
 - `right click` in the same space `> Paste Component As New`
-- change *menu path* name (outfits/(outfitname2))
+- make a *menu path* name (outfits/partyoutfit)
 - change `object toggle` to new outfit
 - change material swap's `material` to new outfit material (leave `renderer` and `slot` as is)
 
 if you want your underwear as an outfit:
 - paste another of the same VRCFury toggle
-- change *menu path* name (outfits/(outfitnamewhatever))
+- make a *menu path* name (outfits/undies)
 - delete any actions. the rest of the outfits turn on the clothing so now they are automatically OFF for this one, and the material is already correct.
 - `options > This Is Exclusive Off State`
 
