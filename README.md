@@ -162,7 +162,7 @@ name that fbx file something very clear so it's easy to find.
 welcome to hell... i'm much less confident in unity. i'll list everything i did... hopefully it all works.
 good luck 😭
 
-the [tutorial i referenced for setup](www.youtube.com/watch?v=7MDyVTpxW8) has much of this if you need visuals. it's not as specific to our purposes so be sure to follow along with what's written here!
+the [rainhet tutorial](www.youtube.com/watch?v=7MDyVTpxW8) has much of this if you need visuals. it's not as specific to our purposes and it's an outdated VCC install process so be sure to follow along with what's written here!
 
 
 ## VCC SETUP
