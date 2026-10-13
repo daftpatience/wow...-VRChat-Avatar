@@ -136,7 +136,7 @@ visemes are the mouth shapes that VRChat uses to make your avi talk. these are m
 technically visemes aren't necessary. if you make a single jaw bone parented to you head armature and weight paint it only to the jaw area (so that it doesn't snag the upper lip) VRChat will use that instead and you'll have a basic jaw flap animation for talking. DON'T do this if you make viseme blendshapes for the mouthsounds or they'll stack and you'll look horrific.
 
 - [viseme/shapekey tutorial](https://www.youtube.com/watch?v=8hCXeUSisFU&t=1489s)
-(she doesn't go over every viseme, but the setup info is good. HIGHLY recommend just grabbing a mirror and referencing your own face! and it's WoW. go big and silly. you know what they move like.)(also, it starts with a blinking pose, but WoW characters just have a funny little eyelid texture that blips in, so feel free to ignore/delete that if you don't wanna bother with it.)
+(she doesn't go over every viseme, but the setup info is good. HIGHLY recommend just grabbing a mirror and referencing your own face!)(also, it starts with a blinking pose, but WoW characters just have a funny little eyelid texture that blips in, so feel free to ignore/delete that if you don't wanna bother with it. if you do wanna bother, maybe try using the knife tool to cut out the shape of the eyelid better and then bury it above the eye to make a blendshape where you pull it down like blinds haha.)
 - [list of VRChat required visemes](https://wiki.vrchat.com/wiki/Visemes) note that unity prefers `i`, `o`, and `u`, to be named `ih`, `oh`, and `ou`, or you'll have to manually assign those later.
 
 
@@ -249,7 +249,9 @@ this is the absolute base important thing you need for your avatar to work in VR
 - click `Add Component` and search for `VRC Avatar Descriptor`.
   - `view > edit view position` you'll see a little floating sphere with a gimbal to move around in the scene. align this vertically with the eyeline of your avatar, and align the depth with approximately the eyesockets. keep it centered.
   - `Lipsync > Auto Detect` check that all your visemes got copied correctly and assign any missing ones.
-  - if you kept the eyelid texture and made eye bones, you can futz with the Eye Look settings here.
+  - if you kept the eyelid texture, open the `eyelids` dropdown:
+		- `eyelid type`: drag in the body mesh from the hierarchy
+		- under `blendshape states` set `blink` to body mesh and `looking up`/`looking down` to `none`
 
 TECHNICALLY you can call this done & upload it! it's playable now but it'll be wearing every outfit at once. let's keep adding stuff >:D
 
