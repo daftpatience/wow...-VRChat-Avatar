@@ -294,7 +294,7 @@ if you want your underwear as an outfit:
 
 if you don't want the underwear as an outfit, choose one of the other outfit toggles and set that one to `Default On` AND `This Is Exclusive Off State`
 
-you can test all these toggles by adding `gesture manager`. it's in the `tools` section at the top. It's a good idea to check your work as you go.
+you can test all these toggles by adding `tools > gesture manager`. It's a good idea to check your work as you go.
 
 
 ## OPTIONAL PREFABS
