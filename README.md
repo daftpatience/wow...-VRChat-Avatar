@@ -264,7 +264,7 @@ TECHNICALLY you can call this done & upload it! it's playable now but it'll be w
 
 - select avatar in  **hierarchy** (you should see a blue selection outline) and look at the **inspector**.
 - hit `Add Component` and search `Toggle (VRCFury)`
-- in *menu path* field, type `outfits/fishingoutfit` or whatever you want to call it. the `outfits/` part makes a subfolder, and you can tell other items to follow this same file path.
+- in *menu path* field, type `outfits/fishingoutfit` or whatever you want to call it. the `outfits/` part makes a subfolder on your radial menu, and you can tell other items to follow this same file path.
 - `Add Action > Object Toggle` (we are showing/hiding outfit parts)
   -`Turn On:` drag in the outfit from the  **hierarchy** (this is your shoulderpads/helmet/skirt/tabbard/cape/whatever. now that it is set to ON that means its OFF everywhere else but here.)
 - Add Action `+` (this is now a tiny plus rather than a big button) `> Material Swap` (we are changing the texture on the body)
@@ -282,7 +282,9 @@ now we repeat all that for the remaining outfits:
 - `right click` in the same space `> Paste Component As New`
 - make a *menu path* name (outfits/partyoutfit)
 - change `object toggle` to new outfit
-- change material swap's `material` to new outfit material (leave `renderer` and `slot` as is)
+- change material swap's `material` to new outfit material
+- add or remove any blendshapes that need adding or removing
+(leave `renderer` and `slot` as is)
 
 if you want your underwear as an outfit:
 - paste another of the same VRCFury toggle
