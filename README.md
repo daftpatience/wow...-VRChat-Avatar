@@ -302,7 +302,7 @@ you can test all these toggles by adding `tools > gesture manager`. It's a good 
 adding premade prefabs like this isn't too hard, they usually come with tutorials. most of the time you just find the right prefab and drag it on to the character in the hierarchy. you can do it i believe in you
 
 - [gogoloco](https://gogoloco.net/) lets you do a lot of nice sitting/lying poses in and out of VR and also adjust your position in space (flying!)
-(it's honestly a little easier to download it from gumroad than to install it with VCC)
+(it's honestly a little easier to download it from gumroad than to install it with VCC but you can do it that way too.)
 - [syncdance](https://kiny.booth.pm/items/4881102)
 
 check out places like Booth, Jinxxy, Nexxy, gumroad etc. if you want to find more things to put on your avi.
