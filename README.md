@@ -264,7 +264,7 @@ TECHNICALLY you can call this done & upload it! it's playable now but it'll be w
 
 - select avatar in  **hierarchy** (you should see a blue selection outline) and look at the **inspector**.
 - hit `Add Component` and search `Toggle (VRCFury)`
-- in *menu path* field, type `outfits/fishingoutfit` or whatever you want to call it. the `outfits/` part makes a folder, and you can tell other items to follow this same file path.
+- in *menu path* field, type `outfits/fishingoutfit` or whatever you want to call it. the `outfits/` part makes a subfolder, and you can tell other items to follow this same file path.
 - `Add Action > Object Toggle` (we are showing/hiding outfit parts)
   -`Turn On:` drag in the outfit from the  **hierarchy** (this is your shoulderpads/helmet/skirt/tabbard/cape/whatever. now that it is set to ON that means its OFF everywhere else but here.)
 - Add Action `+` (this is now a tiny plus rather than a big button) `> Material Swap` (we are changing the texture on the body)
