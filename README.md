@@ -271,7 +271,7 @@ TECHNICALLY you can call this done & upload it! it's playable now but it'll be w
   - set `Renderer` to your base body object. (you can drag it in from the  **hierarchy**)
   - set `slot` to the base body texture slot (nude/underwear/whatever you called it)
   - set `material` to the outfit material you want to change it to. (you can drag it in from the materials folder in the **project** view)
-- IF you made any blendshapes to go with this outfit (like hat hair) Add `Action > Blendshape` and select the correct blendshape.
+- IF you made any blendshapes to go with this outfit (like hat hair) Add action `+ > Blendshape` and select the correct blendshape.
 - `options > saved between worlds`
 - `options > Enable Exclusive Tags` (this will make it so toggling an outfit on automatically turns the others off)
   - in *Exclusive tag* field, type "outfit" or something
